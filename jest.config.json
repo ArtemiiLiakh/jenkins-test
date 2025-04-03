@@ -3,5 +3,10 @@
   "testEnvironment": "node",
   "setupFilesAfterEnv": ["<rootDir>/tests/setup.ts"],
   "testMatch": ["<rootDir>/tests/e2e/**/*.test.ts"],
-  "collectCoverageFrom": ["<rootDir>/src/**/*"]
+  "collectCoverageFrom": ["<rootDir>/src/**/*"],
+  "coverageReporters": [
+    "text",
+    "cobertura"
+  ],
+  "reporters": [ "default", "jest-junit" ]
 }

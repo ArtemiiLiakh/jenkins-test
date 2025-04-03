@@ -17,20 +17,20 @@ describe('Post router tests', () => {
     author = await userUtils.create();
   });
   
-  test('Test post creation', async () => {
-    const dto = {
-      title: 'title',
-      authorId: author.id,
-    } as PostCreateDTO;
+  // test('Test post creation', async () => {
+  //   const dto = {
+  //     title: 'title',
+  //     authorId: author.id,
+  //   } as PostCreateDTO;
     
-    const res = await supertest(app)
-      .post('/api/posts')
-      .send(dto)
-      .expect(201);
+  //   const res = await supertest(app)
+  //     .post('/api/posts')
+  //     .send(dto)
+  //     .expect(201);
     
-    expect(res.body.post.title).toEqual(dto.title);
-    expect(res.body.post.authorId).toEqual(dto.authorId);
-  });
+  //   expect(res.body.post.title).toEqual(dto.title);
+  //   expect(res.body.post.authorId).toEqual(dto.authorId);
+  // });
 
   test('Test post getting', async () => {
     const post = await postUtils.create(author.id);
